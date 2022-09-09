@@ -10,11 +10,11 @@ const Index = () => {
   const [photos, setPhotos] = useState<GalleryPhoto[]>([]);
   const [totalPages, setTotalPages] = useState<number>(0);
   const [page, setPage] = useState(0);
-  // Giving default value for demo purposes
-  const [query, setQuery] = useState<string>("dog");
-  const [newSearch, setNewSearch] = useState(true);
   const [color, setColor] = useState<string>("");
   const [orientation, setOrientation] = useState<string>("");
+  // Giving default values for demo purposes
+  const [query, setQuery] = useState<string>("dog");
+  const [newSearch, setNewSearch] = useState(true);
 
   const fetchPhotos = (pageNumber: number) => {
     fetchGalleryPhotos(query, pageNumber, color, orientation).then((res) => {
