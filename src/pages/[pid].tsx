@@ -4,7 +4,10 @@ import { useEffect, useState } from "react";
 import { DetailedPhoto } from "../types";
 import { fetchPhoto } from "../util/apiUtil";
 
-const TextRow: React.FC<{ label: string; content: string | number }> = ({ label, content }) => (
+const TextRow: React.FC<{ label: string; content: string | number }> = ({
+  label,
+  content,
+}) => (
   <Text>
     <b>{label}: </b>
     {content}
@@ -13,7 +16,6 @@ const TextRow: React.FC<{ label: string; content: string | number }> = ({ label,
 
 const ImagePage = ({}) => {
   const [photo, setPhoto] = useState<DetailedPhoto | undefined>();
-  const [error, setError] = useState<boolean>(false);
 
   const router = useRouter();
   const pid = typeof router.query.pid === "string" ? router.query.pid : "";
